@@ -18,3 +18,36 @@ tsc --init
 npm i dotenv
 
 npm install -D nodemon ts-node
+
+Se puede usar los videos del 152. y 153.
+
+npm install eslint --save-dev
+
+npx eslint --init
+> To check syntax and find problems
+> Javascript modules (import/export)
+> None of these( React Vue.js)
+> Typescript? Yes
+> dice node pero escoge Browser 
+> JSON
+> Yes
+> npm
+
+package.json
+  "eslint-config-prettier": "^8.5.0",
+  "eslint-import-resolver-typescript": "^3.1.4",
+  "eslint-plugin-import": "^2.26.0",
+  "eslint-plugin-prettier": "^4.2.1",
+  "prettier": "^2.7.1"
+
+npm install
+
+.prettierrc
+{
+  "printWidth": 60,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "semi": true
+}
+______________
