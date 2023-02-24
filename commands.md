@@ -15,3 +15,6 @@ npm i -D typescript @types/express @types/node
 
 tsc --init
 
+npm i dotenv
+
+npm install -D nodemon ts-node
