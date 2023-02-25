@@ -51,3 +51,9 @@ npm install
   "semi": true
 }
 ______________
+
+typeorm.io
+
+npm install typeorm reflect-metadata mysql2
+
+npm i cors @types/cors body-parser
