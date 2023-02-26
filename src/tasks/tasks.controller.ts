@@ -9,6 +9,26 @@ export class TaskController {
     ),
   ) {}
 
-  public async getAll(): Promise<Task[]> {}
+  public async getAll(): Promise<Task[]> {
+    // Declaring a variable to hold all tasks
+    let allTasks: Task[];
+
+    // Fetching all tasks using the repository
+    try {
+      allTasks = await this.taskRepository.find({
+        order: {
+          date: 'ASC',  
+        },
+      });
+    
+    } catch(errors) {
+      console.log(errors);
+    }
+    
+
+    // Converting thes tasks instance to an array of objects
+    
+
+  }
   
 }

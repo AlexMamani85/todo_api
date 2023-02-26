@@ -67,3 +67,5 @@ expressjs.com/en/4x/api.html#router.use
 typeorm.io/working-with-repository
 
 typeorm.delightful.studio/classes/_repository_repository_.repository.html
+
+typeorm.io/find-options
