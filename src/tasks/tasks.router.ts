@@ -11,3 +11,9 @@ tasksRouter.get('/tasks', async (req: Request, res: Response) => {
     res.json(allTasks).status(200);
 
 });
+
+tasksRouter.post(
+    '/tasks', 
+    async (req: Request, res: Response)=>{
+
+});
