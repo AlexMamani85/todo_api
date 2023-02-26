@@ -75,3 +75,5 @@ install httpyac - VsCode Addon
 using httpYAC... just looking
 
 npm i class-transformer
+
+npm i express-validator
