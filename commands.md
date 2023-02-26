@@ -57,3 +57,7 @@ typeorm.io
 npm install typeorm reflect-metadata mysql2
 
 npm i cors @types/cors body-parser
+
+typeorm.io/entities#colum-types-for-mysql--mariadb
+
+typeorm.io/entities#column-options
