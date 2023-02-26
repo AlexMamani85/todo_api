@@ -5,7 +5,9 @@ import { TaskController } from './tasks.controller';
 export const tasksRouter: Router = Router();
 
 // Create a default route.
-tasksRouter.get('/tasks', (req: Request, res: Response) => {
+tasksRouter.get('/tasks', async (req: Request, res: Response) => {
     const taskController = new TaskController();
-    taskController.getAll();
+    const allTasks = await taskController.getAll();
+    res.json(allTasks).status(200);
+
 });
