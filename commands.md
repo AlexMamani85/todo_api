@@ -73,3 +73,5 @@ typeorm.io/find-options
 install httpyac - VsCode Addon
 
 using httpYAC... just looking
+
+npm i class-transformer
