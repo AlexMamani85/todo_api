@@ -63,3 +63,7 @@ typeorm.io/entities#colum-types-for-mysql--mariadb
 typeorm.io/entities#column-options
 
 expressjs.com/en/4x/api.html#router.use
+
+typeorm.io/working-with-repository
+
+typeorm.delightful.studio/classes/_repository_repository_.repository.html
