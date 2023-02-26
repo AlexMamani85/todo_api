@@ -71,3 +71,5 @@ typeorm.delightful.studio/classes/_repository_repository_.repository.html
 typeorm.io/find-options
 
 install httpyac - VsCode Addon
+
+using httpYAC... just looking
