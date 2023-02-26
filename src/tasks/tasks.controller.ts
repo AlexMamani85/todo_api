@@ -2,7 +2,7 @@ import { AppDataSource } from "../../index";
 import { Task } from "./tasks.entity";
 import { instanceToPlain } from "class-transformer";
 
-export class TaskController {
+export class TasksController {
 
   constructor (
     private taskRepository = AppDataSource.getRepository(
@@ -29,12 +29,6 @@ export class TaskController {
     
     } catch(errors) {
       console.log(errors);
-    }
-    
-
-
-    
-
-  }
-  
+    }    
+  }  
 }
