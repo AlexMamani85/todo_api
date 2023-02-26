@@ -1,4 +1,4 @@
-import { Request, Response, Router } from  'express';
+import { Router } from  'express';
 import { taskController } from './tasks.controller';
 import { createValidator } from './tasks.validator';
 
