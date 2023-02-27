@@ -75,9 +75,21 @@ class TasksController {
       return res
         .json({error: 'Internal Server Error'})
         .status(500);
-
     }
+  }
 
+  // Method for updating tasks 
+  public async update( 
+    req: Request, 
+    res: Response 
+  ): Promise<Response> {
+    const errors = validationResult(req);
+      
+    if(!errors.isEmpty()) {
+      return res
+        .status(400)
+        .json({errors: errors.array()});
+    }
   }
 }
 
