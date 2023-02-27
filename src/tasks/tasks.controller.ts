@@ -2,8 +2,9 @@ import { Request, Response } from "express";
 
 import { AppDataSource } from "../../index";
 import { Task } from "./tasks.entity";
-import { instanceToPlain } from "class-transformer";
+import { instanceToPlain, plainToInstance } from "class-transformer";
 import { validationResult } from "express-validator";
+import { UpdateResult } from "typeorm"; ///query-builder/result/UpdateResult
 
 class TasksController {
   // Method for the get route
@@ -89,6 +90,50 @@ class TasksController {
       return res
         .status(400)
         .json({errors: errors.array()});
+    }
+
+    // Try to find if tasks exist
+    let task: Task | null;
+
+    try {
+      task = await AppDataSource.getRepository(Task).findOne({
+        where: { id: req.body.id },
+      });
+    } catch(errors) {
+      return res
+        .json({error: 'Internal Server Error'})
+        .status(500);
+    }
+
+    //Return 400 if task is null
+    if(!task) {
+      return res.status(404).json({
+        error: 'The task with given ID does not exist',
+      });
+    }
+
+    // Declare a variable for updatedTask
+    let updatedTask: UpdateResult;
+
+    // Update the task
+    try {
+      updatedTask = await AppDataSource
+        .getRepository( Task )
+        .update(
+          req.body.id, 
+          plainToInstance( Task, {
+            status: req.body.status,
+          })
+        );
+    
+      // Convert the updatedTask instance to an object
+      updatedTask = instanceToPlain(updatedTask) as UpdateResult;
+
+      return res.json(updatedTask).status(200);
+    } catch (errors) {
+      return res
+        .json({error: 'Internal Server Error'})
+        .status(500);
     }
   }
 }
